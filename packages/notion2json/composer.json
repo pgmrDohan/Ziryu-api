@@ -1,0 +1,19 @@
+{
+    "name": "dohankwon/notion2json",
+    "description": "Notion page 2 json",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Notion2json\\": "src/",
+            "Notion2json\\lib\\": "src/lib",
+            "Notion2json\\errors\\":"src/errors"
+        }
+    },
+    "authors": [
+        {
+            "name": "dohankwon"
+        }
+    ],
+    "require": {}
+}
