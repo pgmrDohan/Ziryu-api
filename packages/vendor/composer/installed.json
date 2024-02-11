@@ -1,0 +1,38 @@
+{
+    "packages": [
+        {
+            "name": "dohankwon/notion2json",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "/Users/dohankwon/Working/basicapi/packages/notion2json",
+                "reference": "fe29278c112d0daa1ef66d9654cc69ab608b0d5f"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Notion2json\\": "src/",
+                    "Notion2json\\lib\\": "src/lib",
+                    "Notion2json\\errors\\": "src/errors"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "dohankwon"
+                }
+            ],
+            "description": "Notion page 2 json",
+            "transport-options": {
+                "relative": false
+            },
+            "install-path": "../dohankwon/notion2json"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

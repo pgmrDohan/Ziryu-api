@@ -4,6 +4,7 @@ namespace App\Controllers;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Container\ContainerInterface;
+use Cocur\BackgroundProcess\BackgroundProcess;
 
 use Notion2json\Notion2json;
 
@@ -13,9 +14,15 @@ class templateController{
         $this->c = $container;
     }
     public function index(Request $request, Response $response){
-        $response->getBody()->write(json_encode(Notion2json::convert(
-            "https://dohan-disk.notion.site/Dohan-Kwon-34f1bf3d841c4a70ba7c8bcbf941c443")));
-        $response = $response->withHeader('Content-Type', 'application/json');
+        $pageUrl = json_decode($request->getBody())->pageUrl;
+        $pageid = Notion2json::id($pageUrl);
+        touch($pageid);
+        $response->getBody()->write(json_encode(array(
+            "pageData"=>"http://localhost:8080/".$pageid
+        )));
+        $response->withHeader("Content-type","application/json");
+        $process = new BackgroundProcess(sprintf('php ../packages/convert.php %s %s',$pageUrl,$pageid));
+        $process->run();
         return $response;
     }
 }

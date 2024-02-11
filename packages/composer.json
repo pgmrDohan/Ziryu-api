@@ -1,0 +1,11 @@
+{
+    "require": {
+        "dohankwon/notion2json": "@dev"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/Users/dohankwon/Working/basicapi/packages/notion2json"
+        }
+    ]
+}

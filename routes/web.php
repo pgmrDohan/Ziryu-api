@@ -3,3 +3,4 @@
 //use Psr\Http\Message\ServerRequestInterface as Request;
 
 $app->post('/', 'App\controllers\templateController:index');
+$app->delete('/{id}', 'App\controllers\templateController:index');

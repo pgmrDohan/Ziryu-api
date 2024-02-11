@@ -17,6 +17,7 @@ class PageBlockToPageProps{
         $title = (new PageBlockToTitle($this->_pageBlock))->toTitle();
         $coverImage = (new PageBlockToCoverImageSource($this->_pageBlock))->toImageCover();
         $icon = (new PageBlockToIcon($this->_pageBlock))->toIcon();
+        //echo $icon;
         return array(
             "title"=> $title,
             "coverImage"=>$coverImage,

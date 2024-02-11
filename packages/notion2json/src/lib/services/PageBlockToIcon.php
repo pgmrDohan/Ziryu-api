@@ -19,6 +19,6 @@ class PageBlockToIcon{
         if (!$this->startsWith($icon,'http')) return $icon;
         
         $url = sprintf('https://www.notion.so/image/%s?table=block&id=%s',urlencode($icon),$this->_pageBlock->id);
-        return base64_decode($url);
+        return base64_encode($url);
     }
 }

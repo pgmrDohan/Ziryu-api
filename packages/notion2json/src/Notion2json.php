@@ -17,7 +17,10 @@ class Notion2json{
         $pageProps = (new PageBlockToPageProps($blocks[0]))->toPageProps();
         return (object) array(
             "pageProps"=>$pageProps,
-            "blocks"=>$blocks
+            "blocks"=>$blocks,
         );
+    }
+    public static function id(string $pageUrl): string{
+        return (new createNotionUrlToPageId($pageUrl))->create()->toPageId();
     }
 }
