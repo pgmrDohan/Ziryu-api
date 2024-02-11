@@ -2,7 +2,7 @@
 namespace Notion2json\lib\services;
 class HttpResponse{
     public int $status;
-    public object | string $data;
+    public \stdClass $data;
     public object $headers;
 
     public function __construct($status, $data, $headers=0){ 
@@ -18,6 +18,7 @@ class HttpResponse{
     private function get_http_header_as_array($rawheader):object{
         $header_array = array();
         $header_rows = explode("\n",$rawheader);
+        
         for($i=0;$i<count($header_rows);$i++){
             $fields = explode(":",$header_rows[$i]);
      
